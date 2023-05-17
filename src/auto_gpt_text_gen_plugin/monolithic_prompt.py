@@ -1,10 +1,11 @@
 import json
+from .prompt_builder import PromptBuilder
 from autogpt.config import Config
 from autogpt.config.ai_config import AIConfig
 from autogpt.logs import logger
 from autogpt.prompts.generator import PromptGenerator
 
-class MonolithicPrompt:
+class MonolithicPrompt(PromptBuilder):
 
     def __init__(self, prompt_profile:str = '') -> None:
         """Initializes the MonolithicPrompt class."""

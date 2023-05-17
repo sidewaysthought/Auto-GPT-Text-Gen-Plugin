@@ -2,7 +2,7 @@ import json
 import os
 import re
 import requests
-from monolithic_prompt import MonolithicPrompt
+from .monolithic_prompt import MonolithicPrompt
 from colorama import Fore, Style
 from autogpt.logs import logger
 
