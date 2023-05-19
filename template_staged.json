@@ -1,10 +1,24 @@
 {
     "template_type": "staged",
     "strings": {
-        "stages": [
-            ""
-        ]
-        
-    }
 
+    },
+    "stages": [
+        {
+            "name": "stage1",
+            "message": "{ai_role}\r{ai_goals}\r\rWhat You've Done:\r{history}\r\rSpeaking in the first person, state your thought on how to achieve your goals."
+        },
+        {
+            "name": "stage2",
+            "message": "{ai_role}\r{ai_goals}\r\rYour thought on how to achieve your goals:\r{stage1.result}\r\rSpeaking in the first person, briefly state your reasoning for this course of action."
+        },
+        {
+            "name": "stage3",
+            "message": "{ai_profile}\r\rYour thought on how to achieve your goals:\r{stage1.result}\r\rYour reason:\n{stage2.result}\r\rUsing a bulleted list, state your next 2-4 steps."
+        },
+        {
+            "name": "stage4",
+            "message": "{ai_role}\r\rYour thought on how to achieve your goals:\r{stage1.result}\r\rNext step:\r{stage3.result.item1}\r\rThe commands available to you:\r{commands.names}\r\rState the name of the command to use to achieve your next step."
+        }
+    ]
 }
